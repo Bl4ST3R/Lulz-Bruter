@@ -10,7 +10,6 @@ def green;          "\e[32m#{self}\e[0m" end
 def blue;           "\e[34m#{self}\e[0m" end
 def bold;           "\e[1m#{self}\e[22m" end
 def underline;      "\e[4m#{self}\e[24m" end
-def blink;          "\e[5m#{self}\e[25m" end
 end
 
 
@@ -21,7 +20,7 @@ puts "\n "
 puts "\t\t==================Credits to Fast Five==================".bold.blue
 puts "\n"
 #Websites IP 
-puts "    Enter URL without http for IP ".bold.red
+puts "    Enter URL without http ".bold.red
 
 
 ipurl = gets.chomp
