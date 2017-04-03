@@ -6,4 +6,4 @@ Requirements :
 2) net/dns
 
 Example Screenshot 
-![](Lulz-Bruter/dir.png)
+![](dir.png)
