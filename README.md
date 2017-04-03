@@ -5,5 +5,5 @@ Requirements :
 1) net/http
 2) net/dns
 
-Example Screenshot 
-![](dir.png)
+ 
+![Example Screenshot](dir.png)
