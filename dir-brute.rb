@@ -24,11 +24,10 @@ end
     packet = Net::DNS::Resolver.start(ipurl)   
     answer = packet.answer
     answer.any? {|ans| p   ans}
-    http = "http"  
     puts "\n "
     # replace list.txt with anyother wordlist file 
     File.open("list.txt").readlines.each do |line|       
-    req = http+':'+'/'+'/'+ipurl+'/'+line.chomp+'/'
+    req = "http://"+ipurl+'/'+line.chomp+'/'
     res = Net::HTTP.get_response(URI.parse(req.strip))    
   if res.code == "200"
      puts " #{req} ==> #{res.code}".red.bold
