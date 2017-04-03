@@ -18,22 +18,25 @@ end
     puts "\t\t==================Credits to Fast Five==================".bold.blue
     puts "\n"
     #Websites IP 
-    puts "\tEnter URL WITHOUT HTTP ".bold.red
+    puts "\t\tEnter URL WITHOUT HTTP ".bold.red
+    puts "\t\t========================================================".bold.blue
     ipurl = gets.chomp
+    puts "\t\tSite IP".bold.blue
     puts "\n "
     packet = Net::DNS::Resolver.start(ipurl)   
     answer = packet.answer
     answer.any? {|ans| p   ans}
     puts "\n "
     # replace list.txt with anyother wordlist file 
+    puts "\t\t========================================================".bold.blue
     File.open("list.txt").readlines.each do |line|       
     req = "http://"+ipurl+'/'+line.chomp+'/'
     res = Net::HTTP.get_response(URI.parse(req.strip))    
   if res.code == "200"
-     puts " #{req} ==> #{res.code}".red.bold
+     puts " \t\t#{req} ==> #{res.code}".red.bold
   elsif res.code == "301" or  res.code == "302"
-     puts " #{req} ==> #{res.code}".red.bold.underline   
+     puts " \t\t#{req} ==> #{res.code}".red.bold.underline   
   else
-     puts " #{req} ==> #{res.code}".green.bold
+     puts " \t\t#{req} ==> #{res.code}".green.bold
   end
 end
